@@ -36,9 +36,13 @@ const Experience = (props: ExperienceElement) => {
 
 const ExperienceSection = (props: {
   children: JSX.Element | JSX.Element[]
+  title: string
 }) => {
   return (
-    <section className="border-t-2 border-black pt-4">{props.children}</section>
+    <section className="border-t-2 border-black pt-4">
+      <h2 className="text-xl font-bold pb-2">{props.title}</h2>
+      {props.children}
+    </section>
   )
 }
 
@@ -69,94 +73,95 @@ const Home: NextPage = () => {
             (est. 1997)
             <h2 className="text-xl">Software Developer</h2>
           </div>
-          <section className="text-left py-2">
-            <h2 className="text-2xl font-medium">Contact</h2>
-            <ul className="flex flex-col gap-2 mt-2">
-              <li>
-                <Link href={'mailto:mike@bellika.dk'}>
-                  <a className="underline text-sky-600 items-center flex gap-x-2">
-                    <Image
-                      src="/mail.svg"
-                      width={24}
-                      height={24}
-                      alt="Mail icon"
-                    />
-                    mike@bellika.dk
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href={'https://www.linkedin.com/in/mikebellika/'}>
-                  <a className="underline text-sky-600 items-center flex gap-x-2">
-                    <Image
-                      src="/github.svg"
-                      width={24}
-                      height={24}
-                      alt="Github icon"
-                    />
-                    mikeBellika
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href={'https://github.com/MikeBellika'}>
-                  <a className="underline text-sky-600 items-center flex gap-x-2">
-                    <Image
-                      src="/linkedin.svg"
-                      width={24}
-                      height={24}
-                      alt="LinkedIn icon"
-                    />
-                    MikeBellika
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href={'tel:+4553561263'}>
-                  <a className="underline text-sky-600 items-center flex gap-x-2">
-                    <Image
-                      src="/phone.svg"
-                      width={24}
-                      height={24}
-                      alt="Phone icon"
-                    />
-                    +45 53 56 12 63
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={
-                    'https://www.google.com/maps/place/Else+Alfelts+Vej+52N,+6.+th,+2300+K%C3%B8benhavn/'
-                  }
-                >
-                  <a className="underline text-sky-600 items-center flex gap-x-2">
-                    <Image
-                      src="/home.svg"
-                      width={24}
-                      height={24}
-                      alt="Location icon"
-                    />
-                    Copenhagen S, Denmark
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </section>
-          <section className="text-left w-full">
-            <h2 className="text-2xl font-medium">Languages</h2>
-            <ul className="flex flex-col gap-2 mt-2">
-              <li>Danish</li>
-              <li>English</li>
-            </ul>
-          </section>
+          <div className="flex flex-row gap-x-4 md:flex-col">
+            <section className="text-left py-2">
+              <h2 className="text-2xl font-medium">Contact</h2>
+              <ul className="flex flex-col gap-2 mt-2">
+                <li>
+                  <Link href={'mailto:mike@bellika.dk'}>
+                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                      <Image
+                        src="/mail.svg"
+                        width={24}
+                        height={24}
+                        alt="Mail icon"
+                      />
+                      mike@bellika.dk
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={'https://www.linkedin.com/in/mikebellika/'}>
+                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                      <Image
+                        src="/github.svg"
+                        width={24}
+                        height={24}
+                        alt="Github icon"
+                      />
+                      mikeBellika
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={'https://github.com/MikeBellika'}>
+                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                      <Image
+                        src="/linkedin.svg"
+                        width={24}
+                        height={24}
+                        alt="LinkedIn icon"
+                      />
+                      MikeBellika
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={'tel:+4553561263'}>
+                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                      <Image
+                        src="/phone.svg"
+                        width={24}
+                        height={24}
+                        alt="Phone icon"
+                      />
+                      +45 53 56 12 63
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={
+                      'https://www.google.com/maps/place/Else+Alfelts+Vej+52N,+6.+th,+2300+K%C3%B8benhavn/'
+                    }
+                  >
+                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                      <Image
+                        src="/home.svg"
+                        width={24}
+                        height={24}
+                        alt="Location icon"
+                      />
+                      Copenhagen S, Denmark
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </section>
+            <section className="text-left md:w-full">
+              <h2 className="text-2xl font-medium">Languages</h2>
+              <ul className="flex flex-col gap-2 mt-2">
+                <li>Danish</li>
+                <li>English</li>
+              </ul>
+            </section>
+          </div>
         </div>
       </header>
 
       <main className="flex flex-col p-4">
         <div className="w-full lg:w-2/3 2xl:w-1/2 flex flex-col gap-y-4">
-          <ExperienceSection>
-            <h2 className="text-xl font-bold pb-2">About me</h2>
+          <ExperienceSection title="About me">
             <p>
               Developer with four years of professional experience. Recently I
               have been working mostly with Typescript, developing a Next.js
@@ -164,24 +169,21 @@ const Home: NextPage = () => {
               in cybersecurity and take part in Capture the Flag competitions.
             </p>
           </ExperienceSection>
-          <ExperienceSection>
-            <h2 className="text-xl font-bold pb-2">Experience</h2>
+          <ExperienceSection title="Experience">
             <div className="gap-y-4 flex flex-col">
               {workExperience.map((experience, index) => (
                 <Experience {...experience} key={index} />
               ))}
             </div>
           </ExperienceSection>
-          <ExperienceSection>
-            <h2 className="text-xl font-bold pb-2">Education</h2>
+          <ExperienceSection title="Education">
             <div className="gap-y-4 flex flex-col">
               {education.map((experience, index) => (
                 <Experience {...experience} key={index} />
               ))}
             </div>
           </ExperienceSection>
-          <ExperienceSection>
-            <h2 className="text-xl font-bold pb-2">Projects</h2>
+          <ExperienceSection title="Projects">
             <div className="gap-y-4 flex flex-col">
               <ul className="list-disc pl-5">
                 {projects.map((project, index) => (
