@@ -46,6 +46,17 @@ const ExperienceSection = (props: {
   )
 }
 
+const SocialLink = (props: { children: (JSX.Element | string)[] }) => {
+  return (
+    <a
+      className="underline w-fit text-sky-600 items-center flex gap-x-2 cursor-pointer bg-clip-text hover:text-transparent hover:bg-gradient-to-r to-cyan-400 from-sky-600"
+      target="_blank"
+    >
+      {props.children}
+    </a>
+  )
+}
+
 const Home: NextPage = () => {
   return (
     <div className="flex flex-col md:flex-row">
@@ -78,8 +89,8 @@ const Home: NextPage = () => {
               <h2 className="text-2xl font-medium">Contact</h2>
               <ul className="flex flex-col gap-2 mt-2">
                 <li>
-                  <Link href={'mailto:mike@bellika.dk'}>
-                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                  <Link passHref href={'mailto:mike@bellika.dk'}>
+                    <SocialLink>
                       <Image
                         src="/mail.svg"
                         width={24}
@@ -87,12 +98,15 @@ const Home: NextPage = () => {
                         alt="Mail icon"
                       />
                       mike@bellika.dk
-                    </a>
+                    </SocialLink>
                   </Link>
                 </li>
                 <li>
-                  <Link href={'https://www.linkedin.com/in/mikebellika/'}>
-                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                  <Link
+                    passHref
+                    href={'https://www.linkedin.com/in/mikebellika/'}
+                  >
+                    <SocialLink>
                       <Image
                         src="/github.svg"
                         width={24}
@@ -100,12 +114,12 @@ const Home: NextPage = () => {
                         alt="Github icon"
                       />
                       mikeBellika
-                    </a>
+                    </SocialLink>
                   </Link>
                 </li>
                 <li>
-                  <Link href={'https://github.com/MikeBellika'}>
-                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                  <Link passHref href={'https://github.com/MikeBellika'}>
+                    <SocialLink>
                       <Image
                         src="/linkedin.svg"
                         width={24}
@@ -113,12 +127,12 @@ const Home: NextPage = () => {
                         alt="LinkedIn icon"
                       />
                       MikeBellika
-                    </a>
+                    </SocialLink>
                   </Link>
                 </li>
                 <li>
-                  <Link href={'tel:+4553561263'}>
-                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                  <Link passHref href={'tel:+4553561263'}>
+                    <SocialLink>
                       <Image
                         src="/phone.svg"
                         width={24}
@@ -126,16 +140,17 @@ const Home: NextPage = () => {
                         alt="Phone icon"
                       />
                       +45 53 56 12 63
-                    </a>
+                    </SocialLink>
                   </Link>
                 </li>
                 <li>
                   <Link
+                    passHref
                     href={
                       'https://www.google.com/maps/place/Else+Alfelts+Vej+52N,+6.+th,+2300+K%C3%B8benhavn/'
                     }
                   >
-                    <a className="underline text-sky-600 items-center flex gap-x-2">
+                    <SocialLink>
                       <Image
                         src="/home.svg"
                         width={24}
@@ -143,7 +158,7 @@ const Home: NextPage = () => {
                         alt="Location icon"
                       />
                       Copenhagen S, Denmark
-                    </a>
+                    </SocialLink>
                   </Link>
                 </li>
               </ul>
