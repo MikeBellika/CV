@@ -13,13 +13,13 @@ import {
 const Experience = (props: ExperienceElement) => {
   return (
     <div>
-      <h3 className="text-xl">
+      <h3 className="text-xl font-semibold">
         {props.company}{' '}
         {props.position != null && (
-          <span className="text-sky-700"> | {props.position}</span>
+          <span className="text-sky-700 font-normal"> | {props.position}</span>
         )}
       </h3>
-      <h4 className="py-2">
+      <h4 className="py-2 font-light">
         {props.dateStart}
         {props.dateEnd ? ` - ${props.dateEnd}` : ''}
       </h4>
