@@ -40,7 +40,9 @@ const ExperienceSection = (props: {
 }) => {
   return (
     <section className="border-t-2 border-black pt-4">
-      <h2 className="text-xl font-bold pb-2">{props.title}</h2>
+      <h2 className="text-2xl font-bold pb-2 bg-clip-text text-transparent w-min bg-gradient-to-r from-indigo-600 to-sky-600 whitespace-nowrap">
+        {props.title}
+      </h2>
       {props.children}
     </section>
   )
