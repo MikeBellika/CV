@@ -34,6 +34,14 @@ const Experience = (props: ExperienceElement) => {
   )
 }
 
+const ExperienceSection = (props: {
+  children: JSX.Element | JSX.Element[]
+}) => {
+  return (
+    <section className="border-t-2 border-black pt-4">{props.children}</section>
+  )
+}
+
 const Home: NextPage = () => {
   return (
     <div className="flex flex-col md:flex-row">
@@ -147,7 +155,7 @@ const Home: NextPage = () => {
 
       <main className="flex flex-col p-4">
         <div className="w-full lg:w-2/3 2xl:w-1/2 flex flex-col gap-y-4">
-          <section className="border-t-2 border-black pt-4">
+          <ExperienceSection>
             <h2 className="text-xl font-bold pb-2">About me</h2>
             <p>
               Developer with four years of professional experience. Recently I
@@ -155,24 +163,24 @@ const Home: NextPage = () => {
               frontend and a Firebase functions backend. I have a big interest
               in cybersecurity and take part in Capture the Flag competitions.
             </p>
-          </section>
-          <section className="border-t-2 border-black pt-4">
+          </ExperienceSection>
+          <ExperienceSection>
             <h2 className="text-xl font-bold pb-2">Experience</h2>
             <div className="gap-y-4 flex flex-col">
               {workExperience.map((experience, index) => (
                 <Experience {...experience} key={index} />
               ))}
             </div>
-          </section>
-          <section className="border-t-2 border-black pt-4">
+          </ExperienceSection>
+          <ExperienceSection>
             <h2 className="text-xl font-bold pb-2">Education</h2>
             <div className="gap-y-4 flex flex-col">
               {education.map((experience, index) => (
                 <Experience {...experience} key={index} />
               ))}
             </div>
-          </section>
-          <section className="border-t-2 border-black pt-4">
+          </ExperienceSection>
+          <ExperienceSection>
             <h2 className="text-xl font-bold pb-2">Projects</h2>
             <div className="gap-y-4 flex flex-col">
               <ul className="list-disc pl-5">
@@ -181,7 +189,7 @@ const Home: NextPage = () => {
                 ))}
               </ul>
             </div>
-          </section>
+          </ExperienceSection>
         </div>
       </main>
     </div>
