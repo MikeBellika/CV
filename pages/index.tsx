@@ -58,7 +58,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="flex flex-col justify-start items-center bg-slate-300 gap-y-4 p-4">
+      <header className="flex flex-col justify-start items-center bg-gradient-to-br from-blue-100 to-slate-300 gap-y-4 p-4">
         <div className="w-72 h-72 relative border-white border-4 rounded-full">
           <Image
             src="/me.jpeg"
